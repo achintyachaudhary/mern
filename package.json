@@ -4,6 +4,7 @@
   "description": "sample_learning_app",
   "main": "main.js",
   "dependencies": {
+    "express": "^4.17.1",
     "mongodb": "^3.6.1"
   },
   "devDependencies": {},
