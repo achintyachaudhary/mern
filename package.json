@@ -2,10 +2,11 @@
   "name": "mern_tutorial",
   "version": "1.0.0",
   "description": "sample_learning_app",
-  "main": "main.js",
+  "main": "app.js",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.6.1"
+    "mongodb": "^3.6.1",
+    "mongoose": "^5.10.3"
   },
   "devDependencies": {},
   "scripts": {
