@@ -6,31 +6,16 @@ var mongoose = require("mongoose");
 var morgan = require('morgan')
 
 
-mongoose.connect("mongodb://localhost/my_database", {
+mongoose.connect("mongodb://localhost/mern", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false,
   useCreateIndex: true,
+}, function(){
+  console.log('mongodb ready to serve');
 });
 
-const winston = require('winston');
- 
-const logger = winston.createLogger({
-  level: 'info',
-  format: winston.format.json(),
-  defaultMeta: { service: 'user-service' },
-  transports: [
-    //
-    // - Write all logs with level `error` and below to `error.log`
-    // - Write all logs with level `info` and below to `combined.log`
-    //
-    new winston.transports.File({ filename: 'run/error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'run/combined.log' }),
-  ],
-});
-
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 app.use("", router);
-module.exports = logger
 
 app.listen(3000);

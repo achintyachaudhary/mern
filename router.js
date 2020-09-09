@@ -1,10 +1,8 @@
-var express = require("express");
-var router = express.Router();
-const logger = require("./app") 
-router.get("/", function (req, res) {
-  let x = 9/0 + 9;
-  res.send("Hello world!");
-});
+const express = require("express");
+const router = express.Router();
+const user_view = require("./views/users");
 
-//export this router to use in our index.js
+router.get("/", user_view.get_users);
+router.get("/update/:id", user_view.update_user);
+
 module.exports = router;
